@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de confidentialité — Vinted Tracker</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.7;
+    }
+    header {
+      background: #00b6a8;
+      color: white;
+      padding: 48px 20px;
+      text-align: center;
+    }
+    header h1 { font-size: 2rem; margin-bottom: 8px; }
+    header p { opacity: 0.9; }
+    main {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 50px 20px;
+    }
+    h2 {
+      font-size: 1.25rem;
+      color: #00857a;
+      margin: 36px 0 12px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid #e0f5f4;
+    }
+    p { margin-bottom: 14px; }
+    ul { margin: 10px 0 14px 24px; }
+    li { margin-bottom: 6px; }
+    .last-updated {
+      font-size: 0.85rem;
+      color: #888;
+      margin-bottom: 30px;
+    }
+    .highlight {
+      background: #e8f8f7;
+      border-left: 4px solid #00b6a8;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #888;
+      font-size: 0.9rem;
+      border-top: 1px solid #e0e0e0;
+    }
+    footer a { color: #00b6a8; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🔒 Politique de confidentialité</h1>
+  <p>Vinted Tracker — Application personnelle de suivi d'emails</p>
+</header>
+
+<main>
+
+  <p class="last-updated">Dernière mise à jour : 1er septembre 2024</p>
+
+  <div class="highlight">
+    <strong>Résumé :</strong> Vinted Tracker est une application à usage strictement personnel.
+    Elle accède à vos emails Gmail en lecture seule pour détecter les notifications Vinted.
+    Aucune donnée n'est partagée avec des tiers. Toutes les informations restent sur votre machine locale.
+  </div>
+
+  <h2>1. Présentation de l'application</h2>
+  <p>
+    Vinted Tracker est une application web développée pour un usage privé et personnel.
+    Elle s'exécute localement sur l'ordinateur de son utilisateur et permet de surveiller
+    automatiquement les emails provenant de la plateforme Vinted (marketplace de revente d'articles d'occasion).
+    L'application n'est pas commercialisée et n'est pas accessible au public.
+  </p>
+
+  <h2>2. Données collectées</h2>
+  <p>
+    L'application accède aux données suivantes via l'API Gmail officielle de Google,
+    avec l'autorisation explicite de l'utilisateur et en mode lecture seule :
+  </p>
+  <ul>
+    <li><strong>Adresse email :</strong> L'adresse du compte Gmail connecté, utilisée pour identifier le compte.</li>
+    <li><strong>Emails Vinted uniquement :</strong> Le contenu des emails reçus depuis les expéditeurs officiels Vinted (<code>no-reply@vinted.fr</code>, <code>no-reply@vinted.com</code>, <code>noreply@vinted.fr</code>, <code>no-reply@vinted.be</code>, <code>no-reply@vinted.de</code>, <code>no-reply@vinted.es</code>, <code>no-reply@vinted.it</code>, <code>no-reply@vinted.nl</code>, <code>support@vinted.fr</code>).</li>
+    <li><strong>Métadonnées des emails :</strong> Sujet, date de réception et expéditeur des emails Vinted.</li>
+  </ul>
+  <p>
+    L'application n'accède <strong>jamais</strong> aux emails d'autres expéditeurs.
+    Elle ne lit pas, ne modifie pas, ne supprime pas, et n'envoie pas d'emails.
+  </p>
+
+  <h2>3. Données non collectées</h2>
+  <p>L'application ne collecte <strong>pas</strong> les données suivantes :</p>
+  <ul>
+    <li>Emails provenant d'expéditeurs autres que Vinted</li>
+    <li>Contacts Gmail</li>
+    <li>Pièces jointes</li>
+    <li>Données de navigation ou de localisation</li>
+    <li>Informations personnelles au-delà de celles présentes dans les emails Vinted</li>
+    <li>Données de paiement ou financières autres que celles mentionnées dans les emails Vinted</li>
+  </ul>
+
+  <h2>4. Utilisation des données</h2>
+  <p>Les données accessibles via l'API Gmail sont utilisées exclusivement pour :</p>
+  <ul>
+    <li>Identifier et classer les événements Vinted (vente, achat, question, favori, paiement, etc.)</li>
+    <li>Afficher l'historique des transactions dans le tableau de bord personnel</li>
+    <li>Calculer des statistiques de performance des ventes (chiffre d'affaires, bénéfice)</li>
+    <li>Afficher les annonces actives et les messages reçus d'acheteurs</li>
+  </ul>
+
+  <h2>5. Stockage des données</h2>
+  <p>
+    Toutes les données sont stockées exclusivement dans une base de données SQLite locale
+    sur l'ordinateur de l'utilisateur (fichier <code>data/vinted_tracker.db</code>).
+    Aucune donnée n'est transmise vers un serveur externe, un service cloud ou un tiers quelconque.
+  </p>
+  <p>
+    Les tokens d'authentification OAuth Google sont stockés localement dans le répertoire
+    <code>data/tokens/</code>, sécurisés par les permissions du système de fichiers local.
+    Ces fichiers ne sont jamais inclus dans des sauvegardes partagées ou des dépôts de code.
+  </p>
+
+  <h2>6. Partage des données</h2>
+  <p>
+    <strong>Aucune donnée n'est partagée avec des tiers.</strong>
+    L'application ne dispose d'aucune connexion réseau sortante autre que l'API Gmail de Google,
+    utilisée pour lire les emails de l'utilisateur avec son consentement explicite.
+    Il n'y a pas de télémétrie, d'analytics, ou de service tiers intégré.
+  </p>
+
+  <h2>7. Authentification et sécurité</h2>
+  <p>
+    L'accès à Gmail est réalisé via le protocole OAuth 2.0 de Google, qui est le standard
+    de sécurité officiel pour l'accès délégué aux services Google. L'utilisateur autorise
+    explicitement l'application lors de la première connexion, et peut révoquer cet accès
+    à tout moment depuis son compte Google (<a href="https://myaccount.google.com/permissions" target="_blank" rel="noopener">myaccount.google.com/permissions</a>).
+  </p>
+  <p>
+    Le scope utilisé est <code>https://www.googleapis.com/auth/gmail.readonly</code>
+    (lecture seule), ce qui signifie que l'application ne peut pas envoyer d'emails,
+    modifier des messages ou accéder à d'autres services Google.
+  </p>
+
+  <h2>8. Conservation des données</h2>
+  <p>
+    Les données sont conservées aussi longtemps que l'utilisateur le souhaite.
+    Elles peuvent être supprimées à tout moment en effaçant la base de données locale
+    (<code>data/vinted_tracker.db</code>) ou en supprimant l'application de l'ordinateur.
+  </p>
+
+  <h2>9. Droits de l'utilisateur</h2>
+  <p>En tant qu'utilisateur de cette application, vous avez le droit de :</p>
+  <ul>
+    <li><strong>Accéder</strong> à toutes les données stockées (base de données SQLite locale)</li>
+    <li><strong>Modifier</strong> ou corriger toute information via le tableau de bord</li>
+    <li><strong>Supprimer</strong> vos données à tout moment</li>
+    <li><strong>Révoquer l'accès Gmail</strong> depuis votre compte Google à tout moment</li>
+    <li><strong>Désinstaller</strong> l'application et supprimer toutes les données associées</li>
+  </ul>
+
+  <h2>10. Mineurs</h2>
+  <p>
+    Cette application est destinée à un usage adulte personnel. Elle n'est pas conçue
+    pour être utilisée par des mineurs et ne collecte pas de données relatives à des mineurs.
+  </p>
+
+  <h2>11. Modifications de cette politique</h2>
+  <p>
+    Cette politique de confidentialité peut être mise à jour occasionnellement.
+    En tant qu'application à usage strictement personnel, ces modifications n'affectent
+    que l'utilisateur unique de l'application.
+  </p>
+
+  <h2>12. Contact</h2>
+  <p>
+    Pour toute question relative à cette politique de confidentialité ou à l'utilisation
+    des données par cette application, vous pouvez contacter le développeur à l'adresse :
+    <strong>rayananis2002@gmail.com</strong>
+  </p>
+
+</main>
+
+<footer>
+  <p>
+    <a href="index.html">← Retour à l'accueil</a> &nbsp;|&nbsp;
+    Vinted Tracker — Application personnelle &nbsp;|&nbsp; © 2024–2026
+  </p>
+</footer>
+
+</body>
+</html>
