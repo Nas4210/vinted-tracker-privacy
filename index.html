@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- REMPLACE CE TAG PAR CELUI DE GOOGLE SEARCH CONSOLE -->
+  <!-- <meta name="google-site-verification" content="XXXX_TON_CODE_ICI" /> -->
+  <title>Vinted Tracker — Suivi automatique de vos ventes Vinted</title>
+  <meta name="description" content="Vinted Tracker est une application personnelle qui surveille automatiquement vos emails Vinted via Gmail pour suivre vos ventes, achats et annonces." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f8f9fa;
+      color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: #00b6a8;
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    header h1 { font-size: 2.4rem; margin-bottom: 12px; }
+    header p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin: 0 auto; }
+    main { max-width: 860px; margin: 0 auto; padding: 50px 20px; }
+    h2 { font-size: 1.5rem; color: #00b6a8; margin: 40px 0 16px; }
+    p { margin-bottom: 14px; }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+      margin: 30px 0;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    }
+    .card .icon { font-size: 2rem; margin-bottom: 12px; }
+    .card h3 { font-size: 1.1rem; margin-bottom: 8px; color: #222; }
+    .card p { font-size: 0.95rem; color: #555; margin: 0; }
+    .badge {
+      display: inline-block;
+      background: #e8f8f7;
+      color: #00857a;
+      border: 1px solid #b2e5e2;
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 0.85rem;
+      margin: 4px 4px 4px 0;
+    }
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #888;
+      font-size: 0.9rem;
+      border-top: 1px solid #e0e0e0;
+    }
+    footer a { color: #00b6a8; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🛍️ Vinted Tracker</h1>
+  <p>Suivi automatique de vos emails Vinted — ventes, achats, annonces et statistiques en temps réel.</p>
+</header>
+
+<main>
+
+  <h2>Qu'est-ce que Vinted Tracker ?</h2>
+  <p>
+    <strong>Vinted Tracker</strong> est une application web personnelle conçue pour surveiller automatiquement
+    les emails reçus depuis Vinted (la plateforme de revente de vêtements et objets d'occasion).
+    Elle lit les notifications Gmail de l'utilisateur pour détecter les événements importants :
+    nouvelles ventes, messages d'acheteurs, paiements reçus, questions sur les annonces, favoris, et plus encore.
+  </p>
+  <p>
+    L'application fonctionne en local sur l'ordinateur de l'utilisateur. Elle n'est pas accessible
+    publiquement, ne collecte aucune donnée de tiers, et n'expose aucune information en dehors de la session
+    personnelle de l'utilisateur.
+  </p>
+
+  <h2>Fonctionnalités principales</h2>
+  <div class="card-grid">
+    <div class="card">
+      <div class="icon">📧</div>
+      <h3>Lecture automatique des emails</h3>
+      <p>Connecte vos comptes Gmail via OAuth2 sécurisé et lit uniquement les emails provenant de Vinted.</p>
+    </div>
+    <div class="card">
+      <div class="icon">💰</div>
+      <h3>Suivi des ventes</h3>
+      <p>Détecte chaque vente, calcule le chiffre d'affaires et le bénéfice net après frais Vinted.</p>
+    </div>
+    <div class="card">
+      <div class="icon">📦</div>
+      <h3>Gestion des annonces</h3>
+      <p>Affiche les annonces actives, suit les favoris, les offres reçues et les questions d'acheteurs.</p>
+    </div>
+    <div class="card">
+      <div class="icon">📊</div>
+      <h3>Tableau de bord</h3>
+      <p>Dashboard centralisé avec statistiques de performance, historique et suivi multi-comptes.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔔</div>
+      <h3>Synchronisation périodique</h3>
+      <p>Vérifie automatiquement les nouveaux emails toutes les 3 minutes pour une mise à jour en temps réel.</p>
+    </div>
+    <div class="card">
+      <div class="icon">🔒</div>
+      <h3>Utilisation locale et privée</h3>
+      <p>Toutes les données restent sur votre machine. Aucune donnée n'est partagée avec des tiers.</p>
+    </div>
+  </div>
+
+  <h2>Données utilisées</h2>
+  <p>
+    L'application accède uniquement aux données suivantes via l'API Gmail (en lecture seule) :
+  </p>
+  <span class="badge">Adresse email du compte Gmail</span>
+  <span class="badge">Emails provenant de Vinted (no-reply@vinted.fr, etc.)</span>
+  <span class="badge">Sujet et corps de ces emails</span>
+  <span class="badge">Date de réception</span>
+  <p style="margin-top:16px;">
+    Aucun autre accès à la boîte mail n'est réalisé. L'application ne lit pas, ne modifie pas
+    et ne supprime pas d'emails. Elle n'accède jamais aux emails d'autres expéditeurs que Vinted.
+  </p>
+
+  <h2>Technologies utilisées</h2>
+  <p>
+    Vinted Tracker est développé avec Python (FastAPI), une base de données SQLite locale,
+    et utilise l'API officielle Google Gmail via OAuth 2.0 pour accéder aux données de messagerie.
+    L'interface utilisateur est accessible depuis un navigateur sur l'ordinateur local uniquement.
+  </p>
+
+  <h2>À propos de l'auteur</h2>
+  <p>
+    Cette application est un projet personnel développé pour usage privé. Elle n'est pas
+    commercialisée, ne génère aucun revenu, et n'est pas distribuée publiquement.
+    Elle est utilisée exclusivement par son créateur pour gérer ses comptes de revente sur Vinted.
+  </p>
+
+</main>
+
+<footer>
+  <p>
+    Vinted Tracker — Application personnelle de suivi d'emails &nbsp;|&nbsp;
+    <a href="privacy.html">Politique de confidentialité</a>
+  </p>
+  <p style="margin-top:6px;">© 2024–2026 — Usage privé uniquement</p>
+</footer>
+
+</body>
+</html>
